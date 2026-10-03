@@ -1,0 +1,53 @@
+1. Where the slope changes
+The graph starts to flatten at around 100–200 Earth masses, which is around the mass of Saturn and Jupiter. Above this point, the radius of the planets does not increase significantly even when their mass increases.
+There is also a smaller change in the slope at around 2–10 Earth masses. This is where the planets change from smaller rocky planets, such as Earth, towards larger planets similar to Neptune.
+2. Why a planet 10× Jupiter's mass isn't bigger
+Giant planets are mainly made up of hydrogen and helium. As more mass is added, the planet's gravitational force increases, causing the material inside the planet to be compressed more strongly. This means that although more material is being added, the planet is also being squeezed together. At around Jupiter's mass, these effects largely balance each other, so adding more mass does not cause a large increase in radius.
+Some planets are larger than Jupiter because they can be heated by their nearby star, causing them to expand slightly.
+DATA (Step 2 and 3)
+Downloaded 3 Oct 2026. 6,375 planets in the table; 6,301 with a radius and a mass.
+2,967 masses were estimated from the radius (M-R relationship), so I excluded them.
+After cuts (measured masses only, mass error under 25%, radius error under 10%): 1,090 planets.
+
+STEP 5 RESULTS (slope b in R = a * M^b, with 16-84% bootstrap range)
+
+First try (edges at 10 and 150):
+- under 10: 0.454 (0.432 to 0.478), n = 249
+- 10 to 150: 0.585 (0.565 to 0.604), n = 302
+- over 150: -0.012 (-0.021 to -0.003), n = 539
+
+Published edges (2 and 130):
+- under 2: 0.320 (0.295 to 0.350), n = 26
+- 2 to 130: 0.552 (0.541 to 0.563), n = 504
+- over 130: -0.006 (-0.016 to 0.002), n = 560
+
+What I noticed: When I changed the boundaries from 10 and 150 to the published values of 2 and 130 Earth masses, the slopes changed by more than the bootstrap error bars. The small-planet slope changed from 0.454 to 0.320, while the middle-planet slope changed from 0.585 to 0.552. This shows that the choice of boundaries has a greater effect on the results than the scatter in the data. The slope for the giant planets remained close to zero in both cases, showing that their radius changes very little with increasing mass.
+The slope I trust least and why: I trust the small-planet slope of 0.320 the least because it is based on only 26 planets and changed the most when the boundary was moved closer to 2 Earth masses. This suggests that the result is more sensitive to the choice of boundary and is therefore less reliable.
+STEP 6 RESULTS (Density)
+
+Check:
+My calculated densities were compared with NASA's listed densities. The median ratio was 1.003 (n = 1,088), which is very close to 1. This shows that my density formula and calculations are correct.
+
+Median density by radius bin (g/cm³):
+
+* 0.5–1.0: 4.64 (n = 6)
+* 1.0–1.25: 5.46
+* 1.25–1.5: 6.28
+* 1.5–1.75: 6.58
+* 1.75–2.0: 4.39
+* 2.0–2.5: 3.49
+* 2.5–3.0: 2.86
+* 3.0–4.0: 1.84
+* 4.0–6.0: 1.11
+* 6.0–10.0: 0.67
+* 10.0–16.0: 0.86
+
+Threshold test:
+The first radius bin where the median density falls below each threshold is:
+
+* 3.0 g/cm³: (2.5, 3.0] Earth radii
+* 3.5 g/cm³: (2.0, 2.5] Earth radii
+* 4.0 g/cm³: (2.0, 2.5] Earth radii
+
+What I noticed:
+The result changed from (2.0, 2.5] to (2.5, 3.0] Earth radii when I lowered the threshold from 3.5 to 3.0 g/cm³. This is because the median density in the 2.0–2.5 Earth radii bin is 3.49 g/cm³, which is only slightly below the 3.5 threshold. Therefore, the transition is better described as a range rather than one exact value. Overall, the density decreases steadily as radius increases, with the main transition occurring at roughly 1.75–3 Earth radii.
